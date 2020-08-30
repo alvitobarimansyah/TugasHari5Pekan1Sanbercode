@@ -198,5 +198,13 @@ print(corr_python)
 corr_numpy = np.corrcoef(area, malignant)
 print(corr_numpy)
 
-corr_scipy = scipy.stats.pearsonr(area, y)
+corr_scipy , r = scipy.stats.pearsonr(area, malignant)
 print(corr_scipy)
+
+print(100 * '=')
+
+corr_python, p_pearsonr = scipy.stats.pearsonr(area, malignant)
+print(p_pearsonr)
+
+p_linregress = scipy.stats.linregress(area, malignant).pvalue
+print(p_linregress)
